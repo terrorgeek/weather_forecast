@@ -1,0 +1,2 @@
+class ForecastCache < ApplicationRecord
+end

@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h1>Weather Forecast</h1>
+
+  <%= render partial: 'forecasts/partials/errors', locals: { forecast: @errors } %>
+  <%= render partial: 'forecasts/partials/temperature', locals: { forecast: @forecast } %>
+
+  <%= form_tag forecasts_path, method: :get do %>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Your location:</label>
+      <%= text_field_tag :input, '', class: 'form-control' %>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  <% end %>
+</div>
