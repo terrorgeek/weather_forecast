@@ -22,7 +22,7 @@ Then in 'Your location:' text input, you can input location by City or Address
 2. Class Forecast is a generic class and it's to be extended by other Weather API providers, VisualCrossing is
 just one of them. Any new incoming Weather API can be put into a new class and it's complying SOLID rules.
 3. ResponseParser is to make sure the response if consistent which always includes keys 'result', 'data' and 'msg' and capture exceptions, but never manupulate the 'data'.
-4. View Helper function 'weather_data' is only responsible for manipulating data in view.
+4. View Helper function 'weather_data' is only responsible for manipulating data in view. Later in case if we have RESTful API requirements, we can use jbuilder to handle the logic about rendering pure JSON, which would be another logic and no need to modify the view's rendering logic in 'weather_data'.
 5. In the only controller 'ForecastsController', 3 main functions: validate_request, check_cache and handle_errors
    validate_request is using InputValidator in #1 to validate the input by using ActiveModel.
    check_cache is also to incercept the request by checking Cache, and return consistent response if hit.
