@@ -1,0 +1,7 @@
+<% if params[:input] %>
+  <h1><%= params[:input] %></h1>
+<% end %>
+<% if @forecast.present? %>
+  <%= weather_data @forecast %>
+  <%= from_cache @forecast %>
+<% end %>
